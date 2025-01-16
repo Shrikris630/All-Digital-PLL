@@ -1,1 +1,14 @@
+This directory has testbenches
+To run these testbenches - you need to keep testbench files and design modules in the same directory
+
+Tools needed 
+ - Icraus Verilog
+ - Gtkwave (or any other tool for opening VCD files)
+
+How to use
+Run below
+iverilog <testbench_file_name>.vvp <tesbench_file_name>.v
+vvp <testbench_file_name>.vvp
+gtkawave <vcd_file_name>.vcd
+
 
