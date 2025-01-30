@@ -10,7 +10,7 @@ module adpll_test2;
   reg out_sel;
   reg [2:0]param_sel; 
   wire fb_clk;
-  wire nco_out;
+  wire dco_out;
   reg [4:0]pgm_value;
   wire [4:0] dout;
   wire sign;
@@ -18,7 +18,7 @@ module adpll_test2;
   wire [4:0]value;
   
   
-      adpll_top u0( .clk(clk), .rst(rst), .clk_ref(clk_ref),.clr(clr),.program(program), .out_sel(out_sel),.param_sel(param_sel),.fb_clk(fb_clk),.nco_out(nco_out),.pgm_value(value),.dout(dout),.sign(sign));
+      adpll_top u0( .clk(clk), .rst(rst), .clk_ref(clk_ref),.clr(clr),.program(program), .out_sel(out_sel),.param_sel(param_sel),.fb_clk(fb_clk),.dco_out(dco_out),.pgm_value(value),.dout(dout),.sign(sign));
      
      assign value = pgm_value;
      
@@ -58,15 +58,15 @@ module adpll_test2;
        param_sel = 3'd2;
        pgm_value = 5'd4;
        #1;
-       //nco_offset
+       //dco_offset
        param_sel = 3'd3;
        pgm_value = 5'd8;
        #1;
-       //nco_threshold
+       //dco_threshold
        param_sel = 3'd4;
        pgm_value = 5'd10;
        #1;
-       //knco (nco gain)
+       //kdco (dco gain)
        param_sel = 3'd5;
        pgm_value = 5'd1;     
        rst = 1'b0;
